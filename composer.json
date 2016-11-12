@@ -2,7 +2,6 @@
   "name": "r0dgerv/api-client-abcp",
   "description": "API client abcp.ru",
   "keywords": ["api", "client", "abcp"],
-  "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
