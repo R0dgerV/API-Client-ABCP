@@ -3,6 +3,7 @@
   "description": "API client abcp.ru",
   "keywords": ["api", "client", "abcp"],
   "minimum-stability": "dev",
+  "prefer-stable": "true",
   "license": "MIT",
   "authors": [
     {
