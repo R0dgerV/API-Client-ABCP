@@ -2,6 +2,12 @@
 
 [API abcp.ru] - Документация по API
 
+#install
+
+```sh
+composer require r0dgerv/api-client-abcp=dev-master
+```
+
 В данном классе реализован только метод *Поиск детали по номеру и бренду*
 
 url: search/articles
@@ -20,7 +26,7 @@ url: search/articles
             $password,
             $host
         );
-        
+
         $data = [
             'number'=> '0242245571',
             'brand'=>'Bosch'
