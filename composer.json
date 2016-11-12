@@ -1,0 +1,27 @@
+{
+  "name": "r0dgerv/api-client-abcp",
+  "description": "API client abcp.ru",
+  "keywords": ["api", "client", "abcp"],
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrey Bunyaev",
+      "email": "abunyaev@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "R0dgerV\\ApiClientABCP\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "guzzlehttp/guzzle": "~6.0",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "psr/log": "~1.0"
+  }
+}
