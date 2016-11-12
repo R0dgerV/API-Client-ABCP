@@ -20,6 +20,7 @@ url: search/articles
             $password,
             $host
         );
+        
         $data = [
             'number'=> '0242245571',
             'brand'=>'Bosch'
