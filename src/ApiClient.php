@@ -75,14 +75,16 @@ class ApiClient
 
     /**
      * @param array $data
+     * @param bool|false $onlineStocks
      * @return array
      */
-    public function searchArticles(array $data)
+    public function searchArticles(array $data, $onlineStocks = false)
     {
         $data = array_merge($data,
             [
                 'userlogin' => $this->username,
                 'userpsw' => $this->password,
+                'useOnlineStocks' => ($onlineStocks ? 1 : 0),
             ]
         );
 
