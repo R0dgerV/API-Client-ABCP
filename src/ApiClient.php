@@ -74,6 +74,43 @@ class ApiClient
     }
 
     /**
+     * @param string $brand
+     * @param string $number
+     * @return string|false
+     */
+    public function getDescriptionsByBrandNumber($brand, $number)
+    {
+        $data = [
+            'brand' => $brand,
+            'number' => $number,
+            'format' => 'bnpic',
+        ];
+
+        $result = $this->articlesInfo($data);
+
+        if (is_object($result) && !empty($result->properties->descr)) {
+            return $result->properties->descr;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * @param array $data
+     * @return array
+     */
+    public function articlesInfo(array $data)
+    {
+        $data = array_merge($data,
+            [
+                'userlogin' => $this->username,
+                'userpsw' => $this->password,
+            ]
+        );
+
+        return $this->getQuery('articles/info', $data);
+    }
+    /**
      * @param array $data
      * @param bool|false $onlineStocks
      * @return array
