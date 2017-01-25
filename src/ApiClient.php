@@ -110,6 +110,48 @@ class ApiClient
 
         return $this->getQuery('articles/info', $data);
     }
+
+    /**
+     * @param string $number
+     * @return array
+     */
+    public function getAllDescriptionsByNumber($number)
+    {
+        $results = $this->searchBrandsByNumber($number);
+
+        $result = [];
+        if (is_object($results)) {
+            foreach ($results as $model) {
+                if (!empty($model->description)) {
+                    if (isset($result[$model->description])) {
+                        $result[$model->description] ++;
+                    } else {
+                        $result[$model->description] = 1;
+                    }
+                }
+            }
+        }
+        arsort($result);
+
+        return $result;
+    }
+
+
+    /**
+     * @param string $number
+     * @return array
+     */
+    public function searchBrandsByNumber($number)
+    {
+        $data = [
+            'number' => $number,
+            'userlogin' => $this->username,
+            'userpsw' => $this->password,
+        ];
+
+        return $this->getQuery('search/articles', $data);
+    }
+
     /**
      * @param array $data
      * @param bool|false $onlineStocks
