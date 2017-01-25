@@ -149,7 +149,7 @@ class ApiClient
             'userpsw' => $this->password,
         ];
 
-        return $this->getQuery('search/articles', $data);
+        return $this->getQuery('search/brands', $data);
     }
 
     /**
